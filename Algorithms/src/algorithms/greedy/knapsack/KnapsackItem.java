@@ -8,13 +8,20 @@ package algorithms.greedy.knapsack;
 import java.util.Comparator;
 
 /**
- *
+ * This class works as Item for knapsack problem. It also provide default Comparator which compares
+ *  on the basis of profit to weight ratio.
+ * @see Comparator
  * @author hanu
  */
 public interface KnapsackItem extends Comparator<KnapsackItem> {
         public double getProfit();
         public double getWeight();
-
+/**
+ * default compare on the basis of profit to weight ratio.
+ * @param o1 first knapsack item
+ * @param o2 second knapsack item
+ * @return 
+ */
     @Override
     public default int compare(KnapsackItem o1, KnapsackItem o2) {
         double ratio_o1=o1.getProfit()/o1.getWeight(),ratio_o2=o2.getProfit()/o2.getWeight();
