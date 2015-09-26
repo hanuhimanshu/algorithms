@@ -25,8 +25,7 @@ public interface KnapsackItem extends Comparator<KnapsackItem> {
     @Override
     public default int compare(KnapsackItem o1, KnapsackItem o2) {
         double ratio_o1=o1.getProfit()/o1.getWeight(),ratio_o2=o2.getProfit()/o2.getWeight();
-        if(ratio_o1==ratio_o2)return 0;
-        else if(ratio_o1<ratio_o2)return 1;
+        if(ratio_o1<=ratio_o2)return 1;
         else return -1;
     }
         
